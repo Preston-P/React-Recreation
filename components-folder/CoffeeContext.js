@@ -1,7 +1,6 @@
 import React, { useState, Component } from "react";
 import Coffee from "./coffee";
 import Menu from "../Home-components/menu";
-import Form from "../Home-components/form";
 
 function CoffeeContext() {
   const [coffees, setCoffees] = useState([
@@ -12,25 +11,45 @@ function CoffeeContext() {
   ]);
 
   const handleSubmit = event => {
-    alert("your favorite flavor is" + event.target.value);
+    alert(`your favorite flavor is ${coffees.type}`);
+
+    console.log("Handle submit has occured");
+    console.log(coffees.type);
+    console.log(coffees.descr);
+
+    console.log(filterTaste);
     event.preventDefault();
   };
 
   const handleChange = event => {
-    setCoffees(event.target.value);
+    setCoffees({ type: event.target.value });
+    console.log("Handle change has occured");
   };
+
+  const handleOutput = () => {
+    let numb = 3;
+    console.log(numb);
+  };
+  const filterTaste = coffees
+    .filter(coffee => coffee.type === "Chocolate")
+    .map(coffee => <div>{coffee.descr}</div>);
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        <Menu defaultValue={coffees} onChange={handleChange}>
+        <Menu onChange={handleChange} value={(coffees.type, coffees.descr)}>
           <option value="Fruity">Fruity</option>
-          <option value="Biscuit">Biscuit/Malt</option>
+          <option value={coffees.descr}>Biscuit/Malt</option>
           <option value="Chocolate">Chocolate</option>
           <option value="Earthy">Earthy</option>
         </Menu>
-        <input type="submit" value="submit" name="value"></input>
+        <input type="submit" value="submit"></input>
       </label>
+      <div>
+        {" "}
+        -Flavor profile to be placed here once submitted-
+        {filterTaste}
+      </div>
     </form>
   );
 }
