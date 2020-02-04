@@ -15,13 +15,13 @@ function Nav() {
             <li>Home</li>
           </Link>
 
-          <Link style={navstyle} to="/">
+          <Link style={navstyle} to="/Kyoto">
             <li>Kyoto</li>
           </Link>
-          <Link style={navstyle} to="/">
+          <Link style={navstyle} to="/Osaka">
             <li>Osaka</li>
           </Link>
-          <Link style={navstyle} to="/">
+          <Link style={navstyle} to="/Jeju">
             <li>Jeju</li>
           </Link>
         </ul>

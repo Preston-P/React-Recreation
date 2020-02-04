@@ -16,6 +16,7 @@ export default styled.nav`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-image: url("https://images.pexels.com/photos/2187421/pexels-photo-2187421.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
 
   nav ul {
     min-width: 30vw;

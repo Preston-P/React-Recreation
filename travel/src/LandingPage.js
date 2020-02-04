@@ -4,22 +4,35 @@ import Img1 from "./gridFolder/img1";
 import Img2 from "./gridFolder/img2";
 import Img3 from "./gridFolder/img3";
 import Caption from "./gridFolder/we";
+import { Link } from "react-router-dom";
 
-const Kyoto = () => {
+const LandingPage = () => {
   return (
     <Grid>
-      <Caption>Learn about these destinations</Caption>
-      <Img1 src="/photos-touse/singapore.png"></Img1>
-      <Img2 src="/photos-touse/tower.jpg"></Img2>
-      <Img3 src="photos-touse/flowers.png"></Img3>
-      <h1> Osaka</h1>
-      <h2>Kyoto</h2>
-      <section>Jeju-do</section>
+      <Caption>
+        <h3> Click to learn more about these destinations</h3>
+      </Caption>
+      <Img1>
+        <Link to="/Kyoto" target="_blank">
+          <h1>Kyoto</h1>
+          <img src="/photos-touse/singapore.png"></img>
+        </Link>
+      </Img1>
+      <Img2>
+        <Link to="/Osaka" target="_blank">
+          <h1>Osaka</h1>
+          <img src="/photos-touse/tower.jpg"></img>
+        </Link>
+      </Img2>
 
-      {/*    <Img2></Img2>
-      <Img3></Img3> */}
+      <Img3>
+        <Link to="/Jeju" target="_blank">
+          <h1>Jeju</h1>
+          <img src="photos-touse/flowers.png"></img>
+        </Link>
+      </Img3>
     </Grid>
   );
 };
 
-export default Kyoto;
+export default LandingPage;

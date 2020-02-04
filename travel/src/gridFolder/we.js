@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export default styled.div`
-  grid-column: 1;
-  grid-row: 2;
+  grid-area: Text;
+  text-decoration: none;
   font-size: 1.6rem;
 `;
